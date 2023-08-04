@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/ee2bcfeb71.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="accordion-wrapper"> 
+        <div x-data="{ expanded: null }">
+          <!-- İlk içerik -->
+          <div class="btn-cont">
+            <button class="btn" @click="expanded !== 1 ? expanded = 1 : expanded = null">
+              <span x-show="expanded !== 1" x-collapse.duration.1000ms>Göster 1</span>
+              <span x-show="expanded === 1" x-collapse.duration.1000ms>Gizle 1</span>
+              <div class="icn">
+                <i class="fa-solid fa-arrow-down fa-lg" x-show="expanded !== 1" style="color: #262627;"></i>
+                <i class="fa-solid fa-arrow-up fa-lg" x-show="expanded === 1" style="color: #262627;"></i>
+              </div>
+            </button>
+            
+            <!-- İlk içerik -->
+            <div x-show="expanded === 1" class="accordion-div">
+              <img class="img" src="./img/aj.png" alt="">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur inventore harum necessitatibus, est eos,
+                minima deserunt labore repellat in dolorum officia ullam? Perferendis dolorem harum maxime odit, dolor aut
+                nulla, recusandae esse, quod voluptate aliquam voluptatibus qui tenetur omnis repellat.
+              </p>
+            </div>
+          </div>
+      
+          <!-- İkinci içerik -->
+          <div class="btn-cont">
+            <button class="btn" @click="expanded !== 2 ? expanded = 2 : expanded = null">
+              <span x-show="expanded !== 2" x-collapse.duration.1000ms>Göster 2</span>
+              <span x-show="expanded === 2" x-collapse.duration.1000ms>Gizle 2</span>
+              <div class="icn">
+                <i class="fa-solid fa-arrow-down fa-lg" x-show="expanded !== 2" style="color: #262627;"></i>
+                <i class="fa-solid fa-arrow-up fa-lg" x-show="expanded === 2" style="color: #262627;"></i>
+              </div>
+            </button>
+            
+            <!-- İkinci içerik -->
+            <div x-show="expanded === 2" class="accordion-div">
+              <img class="img" src="./img/aj.png" alt="">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nostrum quas eveniet veritatis tempora aliquid
+                rerum autem unde provident distinctio, ullam, assumenda laborum doloremque, quos officia consectetur modi
+                quibusdam dolores voluptate earum vero dolor repellat enim! Laboriosam quod hic accusantium.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
